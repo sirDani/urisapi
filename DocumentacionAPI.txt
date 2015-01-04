@@ -1,0 +1,35 @@
+URL DONDE ESTA EN HEROKU
+https://gestorfavoritos.herokuapp.com/
+
+URLS DE LA API
+Listar Todos Usuarios
+/users/$pag<[0-9]*>
+
+Listar un usuario
+/user/$id<[0-9]*>
+
+Crear un usuario
+/user
+
+Actualizar usuario
+/user/$id<[0-9]*>
+
+Borrar un usuario
+/user/$id<[0-9]*>
+
+Obtener rutas de un usuario
+/user/$uId<[0-9]*>/ruta	
+
+Crear ruta para un usuario
+/user/$uId<[0-9]*>/ruta
+
+Borrar ruta de un usuario
+/user/$uId<[0-9]*>/ruta/$rId<[0-9]*>
+
+
+
+
+
+
+
+

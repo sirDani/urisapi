@@ -1,0 +1,5 @@
+@(url: Ruta)
+<telefono id="@url.getId()">
+	<ruta>@url.getRuta()</ruta>
+	<tag>@url.getTag()</tag>
+</telefono>

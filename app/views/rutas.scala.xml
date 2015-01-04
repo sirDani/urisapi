@@ -1,0 +1,6 @@
+@(rutas: List[Ruta])
+<telefonos>
+	@for(r <- rutas) {
+		@_ruta(r)
+	}
+</telefonos>

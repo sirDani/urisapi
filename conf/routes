@@ -1,0 +1,44 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           			controllers.UserController.index()
+
+#Listar Usuarios
+GET /users/$pag<[0-9]*>							controllers.UserController.listUsers(pag:Integer)
+
+#Listar 1 usuario
+GET /user/$id<[0-9]*>							controllers.UserController.getUser(id:Long)
+
+#Crear usuario
+POST /user										controllers.UserController.createUser()
+
+#Actualizar usuario
+PUT /user/$id<[0-9]*>							controllers.UserController.updateUser(id:Long)
+
+#Borrar un usuario
+DELETE /user/$id<[0-9]*> 						controllers.UserController.deleteUser(id:Long)
+
+#
+#
+#Obtener rutas de usuario
+GET /user/$uId<[0-9]*>/ruta							controllers.RutaController.getRuta(uId:Long)
+
+#Buscar una ruta por tag
+#Se le pasa por json el tag a buscar
+GET /user/$uId<[0-9]*>/ruta/						controllers.RutaController.findRuta(uId:Long)
+
+#Actualizar ruta de un usuario
+PUT /user/$uId<[0-9]*>/ruta/$rId<[0-9]*>			controllers.RutaController.updateRuta(uId:Long, rId:Long)
+
+#Crear ruta/url de un usuario
+POST /user/$uId<[0-9]*>/ruta						controllers.RutaController.create(uId:Long)
+
+#Borrar ruta/url usuario
+DELETE /user/$uId<[0-9]*>/ruta/$rId<[0-9]*>			controllers.RutaController.delete(uId:Long, rId:Long)
+
+#
+#
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)

@@ -1,0 +1,8 @@
+@(user: MyUser)
+<usuario id="@user.getId()">
+	<nombre>@user.getNombre()</nombre>
+	<apellidos>@user.getApellidos()</apellidos>
+	<url>
+		
+	</url>
+</usuario>

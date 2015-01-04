@@ -1,0 +1,47 @@
+
+p table ruta; 
+drop table tag;
+drop table user;
+drop table user_tag;
+drop sequence ruta_seq;
+drop sequence tag_seq;
+drop sequence user_seq;
+create table ruta (
+id                        bigint not null,
+ruta                      varchar(255),
+user_id                   bigint,
+constraint pk_ruta primary key (id));
+create table tag (
+id                        bigint not null,
+nombre                    varchar(255),
+constraint pk_tag primary key (id));
+
+create table user (
+id                        bigint not null,
+nombre                    varchar(255),
+apellidos                 varchar(255),
+edad                      integer,
+email                     varchar(255),
+password                  varchar(255),
+constraint pk_user primary key (id));
+
+
+create table user_tag (
+user_id                        bigint not null,
+tag_id                         bigint not null,
+constraint pk_user_tag primary key (user_id, tag_id));
+
+create sequence ruta_seq;
+
+create sequence tag_seq;
+
+create sequence user_seq;
+
+alter table ruta add constraint fk_ruta_user_1 foreign key (user_id) references user (id) on delete restrict on update restrict;
+create index ix_ruta_user_1 on ruta (user_id);
+
+
+
+alter table user_tag add constraint fk_user_tag_user_01 foreign key (user_id) references user (id) on delete restrict on update restrict;
+
+alter table user_tag add constraint fk_user_tag_tag_02 foreign key (tag_id) references tag (id) on delete restrict on update restrict;
